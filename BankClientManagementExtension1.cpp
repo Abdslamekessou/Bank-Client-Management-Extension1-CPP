@@ -238,7 +238,7 @@ void ShowAllClientsScreen()
     }
     else {
 
-        for (sClient Client : vClients)
+        for (sClient &Client : vClients)
         {
 
             PrintClientRecordLine(Client);
@@ -266,7 +266,7 @@ void PrintClientCard(sClient Client)
 
 bool FindClientByAccountNumber(string AccountNumber, vector <sClient> vClients, sClient& Client)
 {
-    for (sClient C : vClients)
+    for (sClient &C : vClients)
     {
 
         if (C.AccountNumber == AccountNumber)
@@ -297,6 +297,7 @@ sClient ChangeClientRecord(string AccountNumber)
 
     cout << "Enter AccountBalance? ";
     cin >> Client.AccountBalance;
+    
     return Client;
 }
 
@@ -711,7 +712,7 @@ void ShowTotalBalances() {
     }
     else {
 
-        for (sClient Client : vClients)
+        for (sClient &Client : vClients)
         {
             
             PrintClientRecordBalanceLine(Client);
