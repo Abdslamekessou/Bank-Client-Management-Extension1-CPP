@@ -329,7 +329,7 @@ vector <sClient> SaveCleintsDataToFile(string FileName, vector <sClient> vClient
 
     if (MyFile.is_open())
     {
-        for (sClient C : vClients)
+        for (sClient &C : vClients)
         {
 
             if (C.MarkForDelete == false)
